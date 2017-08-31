@@ -604,7 +604,6 @@ namespace ProtoBuf
                             {
                                 source.NetCache.SetKeyedObject(newObjectKey, value);
                             }
-                            if (newTypeKey >= 0) source.NetCache.SetKeyedObject(newTypeKey, type);
                         }
                         object oldValue = value;
                         if (isString)
@@ -626,16 +625,11 @@ namespace ProtoBuf
                             if (lateSet)
                             {
                                 source.NetCache.SetKeyedObject(newObjectKey, value);
-                                if (newTypeKey >= 0) source.NetCache.SetKeyedObject(newTypeKey, type);
                             }
                         }
                         if (newObjectKey >= 0 && !lateSet && !ReferenceEquals(oldValue, value))
                         {
                             throw new ProtoException("A reference-tracked object changed reference during deserialization");
-                        }
-                        if (newObjectKey < 0 && newTypeKey >= 0)
-                        {  // have a new type, but not a new object
-                            source.NetCache.SetKeyedObject(newTypeKey, type);
                         }
                         break;
                     default:
