@@ -73,8 +73,8 @@ namespace Examples.Issues
             }
         }
 
-        [ProtoContract]
-        [ProtoInclude(100, typeof(D))]
+        //[ProtoContract]
+        //[ProtoInclude(100, typeof(D))]
         public interface ID
         {
             int X { get; }
@@ -84,7 +84,7 @@ namespace Examples.Issues
         [ProtoContract(SkipConstructor = true)]
         public class D : ID
         {
-            [ProtoMember(2)]
+            [ProtoMember(1)]
             public int X { get; }
 
             public D(int x)

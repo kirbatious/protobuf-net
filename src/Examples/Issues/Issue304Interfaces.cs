@@ -25,8 +25,7 @@ namespace Examples.Issues
             public IB B { get; }
         }
 
-        [ProtoContract]
-        [ProtoInclude(102, typeof(B))]
+
         public interface IB
         {
             IC C { get; }
@@ -44,8 +43,7 @@ namespace Examples.Issues
             public IC C { get; }
         }
 
-        [ProtoContract]
-        [ProtoInclude(103, typeof(C))]
+        
         public interface IC
         {
             double[] Data { get; }
