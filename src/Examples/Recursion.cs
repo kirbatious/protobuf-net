@@ -11,6 +11,7 @@ namespace Examples
         public RecursiveObject Yeuch { get; set; }
     }
     
+
     public class Recursion
     {
         [Fact]
